@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boston Area Trans Support (BATS) - A peer-run support group for trans and non-binary adults in the Boston area.">
+    <meta name="theme-color" content="#8a1ae1">
+
+    <title>Boston Area Trans Support</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/bats-larger-transparent.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/images/batty2.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-container">
+            <a href="#top" class="logo-link" aria-label="BATS - Return to top">
+                <img src="assets/images/batsLogo-pure-250w.png" alt="BATS Logo" class="logo" width="125" height="100">
+            </a>
+
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#top">Welcome</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="top" class="hero" aria-labelledby="hero-title">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 id="hero-title">
+                    <a href="#about">Boston Area Trans Support</a>
+                </h1>
+                <p class="hero-description">
+                    We are a peer-run support group for trans and non-binary adults in the Boston area.
+                    Working together for over twelve years, we strive to create an inclusive community,
+                    provide peer support, and ensure a safe space for trans and non-binary people.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title">About Us</h2>
+
+                <div class="about-grid">
+                    <article class="about-card">
+                        <h3>Who We Are</h3>
+                        <p>
+                            BATS is a support group for trans and non-binary people who are 18+ and living
+                            in and around the Boston area. Join us if you are looking for support in
+                            understanding your gender identity, help with coming out or transitioning,
+                            emotional support, a sense of community, a place where you belong, or just
+                            to meet relatable people.
+                        </p>
+                        <p>
+                            Anybody who identifies as trans (transgender, transsexual, non-binary,
+                            genderqueer, genderfluid, agender, bigender, pangender, intersex, etc.)
+                            or who is sincerely questioning their gender identity is welcome.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3>Meetings</h3>
+                        <p>
+                            Our meetings are focused on receiving support, validation, feedback and
+                            problem solving. We emphasize group participation and mutual respect; a
+                            volunteer facilitator and co-facilitator, and individual check-ins help
+                            ensure that no one dictates the flow of conversation and everyone has a
+                            chance to express themselves.
+                        </p>
+                        <p>
+                            We meet in a room with plenty of chairs, heating, fans, and easy access to bathrooms.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3>When and Where</h3>
+                        <p>
+                            We meet weekly in Cambridge. We do not publish our meeting
+                            location or time online in order to protect the safety and privacy of our
+                            members. Details will be provided after you join us.
+                        </p>
+                        <p>
+                            Our location is wheelchair accessible through an alternative
+                            entrance and has a wheelchair accessible bathroom. If you need wheelchair
+                            access please let us know when submitting the join form so we can arrange
+                            access to the alternate entrance.
+                        </p>
+                        <p>
+                            If you have any other accommodation needs please let us know as we are
+                            working on how to implement other accessibility needs.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Section -->
+        <section id="join" class="join-section" aria-labelledby="join-title">
+            <div class="container">
+                <h2 id="join-title">Join Us</h2>
+
+                <div class="join-content">
+                    <div class="join-info">
+                        <p>
+                            If you are trans (transgender, transsexual, bigender, genderqueer, agender,
+                            nonbinary, intersex, questioning, etc.) and would like to learn more about
+                            BATS, including how to come to one of our meetings, please fill out the
+                            short form below. We will respond via email as soon as possible.
+                        </p>
+                        <p>
+                            If you are having problems submitting the form, please send an email to
+                            <a href="mailto:contact@massbats.org">contact@massbats.org</a>.
+                        </p>
+                        <p>
+                            <strong>Note:</strong> BATS is only accepting members over the age of 18+.
+                            If you are under 18 and need support, please contact
+                            <a href="https://www.bagly.org" target="_blank" rel="noopener noreferrer">BAGLY</a> or
+                            <a href="https://jri.org/services/health-and-housing/health/boston-glass" target="_blank" rel="noopener noreferrer">Boston GLASS</a>.
+                        </p>
+
+                        <button type="button" class="btn btn-primary" id="show-form-btn" aria-expanded="false" aria-controls="join-form">
+                            Join Us
+                        </button>
+
+                        <img src="assets/images/river.jpg" alt="Boston river view" class="join-image" loading="lazy">
+                    </div>
+
+                    <div id="join-form" class="join-form-container" hidden>
+                        <form
+                            id="gform"
+                            class="join-form"
+                            action="https://docs.google.com/forms/d/e/1FAIpQLSeMDJSoacQ3rhd13JupkeRFjMrO7hvG283ErAXH7SFgAOd3AQ/formResponse"
+                            method="POST"
+                            target="hidden_iframe"
+                        >
+                            <div class="form-group">
+                                <label for="entry-name">
+                                    Name <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">(required)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="entry-name"
+                                    name="entry.1593113197"
+                                    required
+                                    autocomplete="name"
+                                    aria-describedby="name-error"
+                                >
+                                <span id="name-error" class="error-message" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entry-pronouns">Pronouns</label>
+                                <select id="entry-pronouns" name="entry.250876492">
+                                    <option value="They/Them/Theirs">They/Them/Theirs</option>
+                                    <option value="He/Him/His">He/Him/His</option>
+                                    <option value="She/Her/Hers">She/Her/Hers</option>
+                                    <option value="__other_option__">Other</option>
+                                </select>
+                                <input
+                                    type="text"
+                                    id="entry-pronouns-other"
+                                    name="entry.250876492.other_option_response"
+                                    class="other-input"
+                                    placeholder="Enter your pronouns"
+                                    hidden
+                                    aria-label="Other pronouns"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entry-email">
+                                    Email <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">(required)</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="entry-email"
+                                    name="entry.1071965170"
+                                    required
+                                    autocomplete="email"
+                                    aria-describedby="email-error"
+                                >
+                                <span id="email-error" class="error-message" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entry-subscribe">Subscribe to notifications?</label>
+                                <span class="form-hint">Email reminders for upcoming meetings</span>
+                                <select id="entry-subscribe" name="entry.1789984741">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entry-bio">
+                                    Tell us about yourself <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">(required)</span>
+                                </label>
+                                <span class="form-hint">A little about you and what you hope to get out of BATS</span>
+                                <textarea
+                                    id="entry-bio"
+                                    name="entry.816115036"
+                                    rows="5"
+                                    required
+                                    aria-describedby="bio-error"
+                                ></textarea>
+                                <span id="bio-error" class="error-message" role="alert"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                        </form>
+
+                        <div id="thank-you" class="thank-you-message" hidden>
+                            <h3>Form submitted!</h3>
+                            <p>We will respond soon.</p>
+                        </div>
+
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="Form submission frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources-section" aria-labelledby="resources-title">
+            <div class="container">
+                <h2 id="resources-title">Resources</h2>
+
+                <div class="resources-content">
+                    <img src="assets/images/bridge.jpg" alt="Boston bridge" class="resources-image" loading="lazy">
+
+                    <div class="resources-list">
+                        <div class="resource-category">
+                            <h3>Healthcare</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://fenwayhealth.org/the-borum/" target="_blank" rel="noopener noreferrer">Sidney Borum Jr. Health Center</a> ("The Borum")
+                                    <span class="resource-info">| 75 Kneeland Street Boston | 617-457-8140</span>
+                                </li>
+                                <li>
+                                    <a href="https://fenwayhealth.org/" target="_blank" rel="noopener noreferrer">Fenway Community Health</a>
+                                    <span class="resource-info">| 1340 Boylston Street Boston | 617-267-0900</span>
+                                </li>
+                                <li>
+                                    <a href="https://fenwayhealth.org/locations/" target="_blank" rel="noopener noreferrer">Fenway South End</a>
+                                    <span class="resource-info">| 142 Berkeley Street Boston | 617-247-7555</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.mahealthconnector.org/" target="_blank" rel="noopener noreferrer">Massachusetts Health Connector</a>
+                                    <span class="resource-info">(MassHealth and Subsidized Insurance Plans) | 877-623-6765</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resource-category">
+                            <h3>Advocacy and Support</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.masstpc.org/" target="_blank" rel="noopener noreferrer">Massachusetts Transgender Political Coalition</a>
+                                    <span class="resource-info">| 617-778-0519</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.pflag.org/chapter/pflag-greater-boston" target="_blank" rel="noopener noreferrer">Greater Boston PFLAG</a>
+                                    <span class="resource-info">| 781-891-5966</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.lgbthotline.org/" target="_blank" rel="noopener noreferrer">LGBT National Hotline</a>
+                                    <span class="resource-info">| 888-843-4564</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.vpi.org/mpt-drop-in" target="_blank" rel="noopener noreferrer">VPI Mobile Prevention's Transgender Wellness Project</a>
+                                    <span class="resource-info">| 617-927-0836 x189</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resource-category">
+                            <h3>Crisis Prevention</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://translifeline.org/" target="_blank" rel="noopener noreferrer">Trans Lifeline</a>
+                                    <span class="resource-info">| 877-565-8860</span>
+                                </li>
+                                <li>
+                                    <a href="https://www.thetrevorproject.org/" target="_blank" rel="noopener noreferrer">The Trevor Project</a>
+                                    <span class="resource-info">| 866-488-7386</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resource-category">
+                            <h3>Logistics</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.cambridgema.gov/traffic/Parking/cambridgeparkingmap" target="_blank" rel="noopener noreferrer">Cambridge Street and Garage Parking Map</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>Boston Area Trans Support (BATS) - Cambridge, MA, USA</p>
+                <p>
+                    If you are part of an organization or need to contact Boston Area Trans Support
+                    as an organization, please email:
+                    <a href="mailto:contact@massbats.org">contact@massbats.org</a>
+                </p>
+                <p>
+                    View our <a href="BATS_public_policies.pdf">public policies</a>.
+                </p>
+                <p class="copyright">
+                    Website Copyright &copy; 2014-<span id="current-year">2024</span> - All Rights Reserved
+                </p>
+                <p class="trademark">Batty the Bat (mascot) is a trademark of BATS and Copyright &copy; 2015</p>
+            </div>
+            <div class="footer-logo">
+                <img src="assets/images/banner35-300x94.png" alt="BATS Banner" width="300" height="94" loading="lazy">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript for interactivity -->
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('is-open');
+        });
+
+        // Close mobile menu when clicking a nav link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mainNav.classList.remove('is-open');
+            });
+        });
+
+        // Show/hide join form
+        const showFormBtn = document.getElementById('show-form-btn');
+        const joinForm = document.getElementById('join-form');
+
+        showFormBtn.addEventListener('click', () => {
+            const isExpanded = showFormBtn.getAttribute('aria-expanded') === 'true';
+            showFormBtn.setAttribute('aria-expanded', !isExpanded);
+            joinForm.hidden = isExpanded;
+            if (!isExpanded) {
+                joinForm.querySelector('input').focus();
+            }
+        });
+
+        // Handle "Other" pronouns option
+        const pronounsSelect = document.getElementById('entry-pronouns');
+        const pronounsOther = document.getElementById('entry-pronouns-other');
+
+        pronounsSelect.addEventListener('change', () => {
+            if (pronounsSelect.value === '__other_option__') {
+                pronounsOther.hidden = false;
+                pronounsOther.required = true;
+            } else {
+                pronounsOther.hidden = true;
+                pronounsOther.required = false;
+                pronounsOther.value = '';
+            }
+        });
+
+        // Form submission handling
+        const form = document.getElementById('gform');
+        const thankYou = document.getElementById('thank-you');
+        let submitted = false;
+
+        form.addEventListener('submit', (e) => {
+            submitted = true;
+            setTimeout(() => {
+                form.hidden = true;
+                thankYou.hidden = false;
+                thankYou.focus();
+            }, 500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    // Update focus for accessibility
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
+                }
+            });
+        });
+
+        // Header scroll behavior
+        let lastScroll = 0;
+        const header = document.getElementById('site-header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
