@@ -5,13 +5,13 @@
     /* Colors */
     --color-primary: #8a1ae1;
     --color-primary-dark: #6b15b0;
-    --color-primary-light: #a94cf0;
+    --color-primary-light: #c490f5;
     --color-background-dark: #27323a;
     --color-background-darker: #1e272e;
     --color-text-light: #ffffff;
     --color-text-dark: #333333;
     --color-text-muted: #666666;
-    --color-link: #a94cf0;
+    --color-link: #c490f5;
     --color-link-hover: #c77dff;
     --color-error: #e74c3c;
     --color-success: #27ae60;
@@ -356,7 +356,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../images/street.jpg');
+    background-image: url('../images/street.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -521,12 +521,12 @@ ul {
 
 .form-hint {
     font-size: var(--font-size-sm);
-    opacity: 0.85;
+    opacity: 0.9;
     margin-bottom: var(--spacing-xs);
 }
 
 .required {
-    color: #ffcccc;
+    color: #ffeded;
 }
 
 .form-group input[type="text"],
@@ -567,7 +567,7 @@ ul {
 
 .error-message {
     font-size: var(--font-size-sm);
-    color: #ffcccc;
+    color: #ffeded;
     min-height: 1.2em;
 }
 
