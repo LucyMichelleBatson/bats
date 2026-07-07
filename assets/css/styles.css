@@ -680,6 +680,7 @@ ul {
 
 .footer-info a {
     color: var(--color-link);
+    text-decoration: underline;
 }
 
 .footer-info a:hover,
