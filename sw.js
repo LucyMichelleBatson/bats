@@ -4,16 +4,16 @@
 const CACHE = 'bats-v1';
 
 const ASSETS = [
-    '/',
-    '/assets/css/styles.css',
-    '/assets/images/street.webp',
-    '/assets/images/river.webp',
-    '/assets/images/bridge.webp',
-    '/assets/images/batsLogo-pure-250w.webp',
-    '/assets/images/banner35-300x94.webp',
-    '/assets/images/bats-larger-transparent.png',
-    '/assets/images/batty2.png',
-    '/BATS_public_policies.pdf',
+    './',
+    './assets/css/styles.css',
+    './assets/images/street.webp',
+    './assets/images/river.webp',
+    './assets/images/bridge.webp',
+    './assets/images/batsLogo-pure-250w.webp',
+    './assets/images/banner35-300x94.webp',
+    './assets/images/bats-larger-transparent.png',
+    './assets/images/batty2.png',
+    './BATS_public_policies.pdf',
 ];
 
 self.addEventListener('install', event => {
@@ -42,7 +42,7 @@ self.addEventListener('fetch', event => {
     if (request.mode === 'navigate') {
         // Network-first for HTML so content updates are picked up promptly
         event.respondWith(
-            fetch(request).catch(() => caches.match('/'))
+            fetch(request).catch(() => caches.match('./'))
         );
     } else {
         // Cache-first for all other assets (CSS, images, PDF)
