@@ -12,6 +12,9 @@
     <link rel="icon" href="assets/images/bats-larger-transparent.png" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/images/batty2.png">
 
+    <!-- Preload LCP image so the browser fetches it before parsing CSS -->
+    <link rel="preload" as="image" href="assets/images/street.webp" type="image/webp" fetchpriority="high">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -442,6 +445,11 @@
 
             lastScroll = currentScroll;
         });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
     </script>
 </body>
 </html>

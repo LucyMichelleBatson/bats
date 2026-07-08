@@ -1,3 +1,6 @@
+// IMPORTANT! Cache invalidation: when you update assets, bump CACHE = 'bats-v1' to 'bats-v2' 
+// (or any new string) in sw.js. The browser detects the changed file, installs the new 
+// worker, and the activate handler deletes the old cache automatically.
 const CACHE = 'bats-v1';
 
 const ASSETS = [
