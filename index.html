@@ -1032,22 +1032,21 @@ ul {
                     </div>
 
                     <div id="join-form" class="join-form-container" hidden>
-                        <form
-                            id="gform"
-                            class="join-form"
-                            action="https://docs.google.com/forms/d/e/1FAIpQLSeMDJSoacQ3rhd13JupkeRFjMrO7hvG283ErAXH7SFgAOd3AQ/formResponse"
-                            method="POST"
-                            target="hidden_iframe"
-                        >
+
+                        <form id="join-form-element" class="join-form">
+                            <input type="hidden" name="access_key" value="48776ad4-1eaf-4cce-983f-70f670baea6f">
+                            <input type="hidden" name="subject" value="New BATS membership inquiry">
+                            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+
                             <div class="form-group">
-                                <label for="entry-name">
+                                <label for="field-name">
                                     Name <span class="required" aria-hidden="true">*</span>
                                     <span class="visually-hidden">(required)</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="entry-name"
-                                    name="entry.1593113197"
+                                    id="field-name"
+                                    name="name"
                                     required
                                     autocomplete="name"
                                     aria-describedby="name-error"
@@ -1056,17 +1055,16 @@ ul {
                             </div>
 
                             <div class="form-group">
-                                <label for="entry-pronouns">Pronouns</label>
-                                <select id="entry-pronouns" name="entry.250876492">
+                                <label for="field-pronouns">Pronouns</label>
+                                <select id="field-pronouns" name="pronouns">
                                     <option value="They/Them/Theirs">They/Them/Theirs</option>
                                     <option value="He/Him/His">He/Him/His</option>
                                     <option value="She/Her/Hers">She/Her/Hers</option>
-                                    <option value="__other_option__">Other</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 <input
                                     type="text"
-                                    id="entry-pronouns-other"
-                                    name="entry.250876492.other_option_response"
+                                    id="field-pronouns-other"
                                     class="other-input"
                                     placeholder="Enter your pronouns"
                                     hidden
@@ -1075,14 +1073,14 @@ ul {
                             </div>
 
                             <div class="form-group">
-                                <label for="entry-email">
+                                <label for="field-email">
                                     Email <span class="required" aria-hidden="true">*</span>
                                     <span class="visually-hidden">(required)</span>
                                 </label>
                                 <input
                                     type="email"
-                                    id="entry-email"
-                                    name="entry.1071965170"
+                                    id="field-email"
+                                    name="email"
                                     required
                                     autocomplete="email"
                                     aria-describedby="email-error"
@@ -1091,23 +1089,23 @@ ul {
                             </div>
 
                             <div class="form-group">
-                                <label for="entry-subscribe">Subscribe to notifications?</label>
+                                <label for="field-subscribe">Subscribe to notifications?</label>
                                 <span class="form-hint">Email reminders for upcoming meetings</span>
-                                <select id="entry-subscribe" name="entry.1789984741">
+                                <select id="field-subscribe" name="subscribe">
                                     <option value="No">No</option>
                                     <option value="Yes">Yes</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="entry-bio">
+                                <label for="field-bio">
                                     Tell us about yourself <span class="required" aria-hidden="true">*</span>
                                     <span class="visually-hidden">(required)</span>
                                 </label>
                                 <span class="form-hint">A little about you and what you hope to get out of BATS</span>
                                 <textarea
-                                    id="entry-bio"
-                                    name="entry.816115036"
+                                    id="field-bio"
+                                    name="message"
                                     rows="5"
                                     required
                                     aria-describedby="bio-error"
@@ -1122,8 +1120,6 @@ ul {
                             <h3>Form submitted!</h3>
                             <p>We will respond soon.</p>
                         </div>
-
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="Form submission frame"></iframe>
                     </div>
                 </div>
             </div>
@@ -1268,11 +1264,11 @@ ul {
         });
 
         // Handle "Other" pronouns option
-        const pronounsSelect = document.getElementById('entry-pronouns');
-        const pronounsOther = document.getElementById('entry-pronouns-other');
+        const pronounsSelect = document.getElementById('field-pronouns');
+        const pronounsOther = document.getElementById('field-pronouns-other');
 
         pronounsSelect.addEventListener('change', () => {
-            if (pronounsSelect.value === '__other_option__') {
+            if (pronounsSelect.value === 'Other') {
                 pronounsOther.hidden = false;
                 pronounsOther.required = true;
             } else {
@@ -1282,18 +1278,34 @@ ul {
             }
         });
 
-        // Form submission handling
-        const form = document.getElementById('gform');
+        // Form submission via Web3Forms
+        const form = document.getElementById('join-form-element');
         const thankYou = document.getElementById('thank-you');
-        let submitted = false;
+        const submitBtn = form.querySelector('[type="submit"]');
 
-        form.addEventListener('submit', (e) => {
-            submitted = true;
-            setTimeout(() => {
-                form.hidden = true;
-                thankYou.hidden = false;
-                thankYou.focus();
-            }, 500);
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            if (pronounsSelect.value === 'Other' && pronounsOther.value.trim()) {
+                formData.set('pronouns', pronounsOther.value.trim());
+            }
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting…';
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+                const data = await res.json();
+                if (data.success) {
+                    form.hidden = true;
+                    thankYou.hidden = false;
+                    thankYou.focus();
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                }
+            } catch {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+            }
         });
 
         // Smooth scroll for anchor links
