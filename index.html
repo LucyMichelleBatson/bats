@@ -1293,10 +1293,10 @@ ul {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting…';
             try {
-                const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+                const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: formData });
                 const data = await res.json();
                 if (data.success) {
-                    form.hidden = true;
+                    form.style.display = 'none';
                     thankYou.hidden = false;
                     thankYou.focus();
                 } else {
