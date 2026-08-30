@@ -1260,7 +1260,7 @@ ul {
             showFormBtn.setAttribute('aria-expanded', !isExpanded);
             joinForm.hidden = isExpanded;
             if (!isExpanded) {
-                joinForm.querySelector('input').focus();
+                document.getElementById('field-name').focus();
             }
         });
 
